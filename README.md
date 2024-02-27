@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Huddle Landing Page with Curves](https://your-solution-url.com)
--   Live Site URL: [Huddle Landing Page with Curves](https://your-live-site-url.com)
+-   Solution URL: [Huddle Landing Page with Curves](https://github.com/Albrt78/HuddleLandingPagewithCurvedSections.github.io)
+-   Live Site URL: [Huddle Landing Page with Curves](https://albrt78.github.io/HuddleLandingPagewithCurvedSections.github.io/)
 
 ### Built with
 
