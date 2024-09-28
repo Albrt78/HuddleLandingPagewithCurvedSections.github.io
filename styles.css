@@ -24,10 +24,6 @@
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100dvh;
-}
-
 header {
     font-family: "Open Sans", sans-serif;
     display: flex;
@@ -240,7 +236,7 @@ footer .footer-wrapper .footer-info .footer-logo {
 footer .footer-wrapper .footer-info p {
     padding-bottom: 1.5rem;
     font-size: 1rem;
-    max-width: 450px;
+    width: 100%;
 }
 
 footer .footer-wrapper .footer-info .contact {
@@ -268,6 +264,10 @@ footer .footer-wrapper .footer-info .icon ul li:hover {
     color: rgb(0, 191, 255);
 }
 
+footer .footer-wrapper .footer-newsletter {
+    width: 100%;
+}
+
 footer .footer-wrapper .footer-newsletter h5 {
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -277,21 +277,25 @@ footer .footer-wrapper .footer-newsletter h5 {
 footer .footer-wrapper .footer-newsletter p {
     font-size: 1.05rem;
     font-weight: 400;
-    max-width: 470px;
+    width: 100%;
     padding-bottom: 2rem;
 }
 
 footer .footer-wrapper .footer-newsletter form {
     display: flex;
     align-items: flex-start;
-    gap: 2.5rem;
+    gap: 2rem;
+    width: 100%;
+}
+
+footer .footer-wrapper .footer-newsletter form .input-wrapper {
+    width: 100%;
 }
 
 footer .footer-wrapper .footer-newsletter form .input-wrapper input {
     width: 100%;
     padding: 1.2rem 1rem;
     border-radius: 0.5rem;
-    margin-right: 10rem;
 }
 
 footer .footer-wrapper .footer-newsletter form .input-wrapper p {
@@ -308,6 +312,7 @@ footer .footer-wrapper .footer-newsletter form button {
     padding: 1rem 2rem;
     border-radius: 0.5rem;
     background-color: var(--Pink);
+    width: auto;
 }
 
 footer .footer-wrapper .footer-newsletter form button:hover {
@@ -319,23 +324,30 @@ footer .attribution {
 }
 
 /* Media Query */
-@media screen and (max-width: 1400.98px) {
-    footer .footer-wrapper .footer-newsletter form {
-        gap: 2rem;
+@media (max-width: 1204.98px) {
+    .home {
+        padding-inline: 5rem;
     }
-}
 
-@media screen and (max-width: 1204.98px) {
     .home h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .home .home-desc {
-        padding-inline: 5rem;
+        padding-inline: 3rem;
+        font-size: 1.3rem;
+    }
+
+    .home .home-button,
+    .question button {
+        padding-inline: 10rem;
+        padding-block: 2rem;
+        font-size: 1.2rem;
     }
 
     .info {
         flex-direction: column;
+        padding-inline: 5rem;
         gap: 7rem;
     }
 
@@ -344,27 +356,52 @@ footer .attribution {
         flex-direction: column-reverse;
     }
 
+    .desktop-1 {
+        padding-inline: 5rem;
+    }
+
+    .desktop-1 .desktop-1-wrapper-detail h3,
+    .conversation .conversation-detail h3,
+    .desktop-2 .desktop-2-wrapper-detail h3 {
+        font-size: 3rem;
+    }
+
+    .desktop-1 .desktop-1-wrapper-detail p,
+    .desktop-2 .desktop-2-wrapper-detail p {
+        font-size: 1.3rem;
+    }
+
     .conversation {
         flex-direction: column;
+        padding-inline: 5rem;
     }
 
-    footer .footer-wrapper .footer-newsletter form {
-        flex-direction: column;
-        gap: 0rem;
+    .conversation .conversation-detail p {
+        font-size: 1.3rem;
     }
 
-    footer .footer-wrapper .footer-newsletter form .input-wrapper p {
-        margin-bottom: -1rem;
+    .desktop-2 {
+        padding-inline: 5rem;
     }
 
-    footer .footer-wrapper .footer-newsletter form .input-wrapper input {
-        min-width: 200%;
-        min-width: 150%;
-        margin-right: 0;
+    .question {
+        font-size: 3rem;
+    }
+
+    footer {
+        padding-inline: 5rem;
     }
 }
 
-@media screen and (max-width: 950.98px) {
+@media (max-width: 950.98px) {
+    .home h1,
+    .desktop-1 .desktop-1-wrapper-detail h3,
+    .conversation .conversation-detail h3,
+    .desktop-2 .desktop-2-wrapper-detail h3,
+    .question {
+        font-size: 2.5rem;
+    }
+
     footer {
         padding-block-start: 5rem;
     }
@@ -376,35 +413,42 @@ footer .attribution {
     }
 
     footer .footer-wrapper .footer-newsletter form .input-wrapper input {
-        min-width: 250%;
+        width: 100%;
     }
 }
 
-@media screen and (max-width: 828.98px) {
-    .home {
-        padding-inline: 5rem;
-    }
-
+@media (max-width: 828.98px) {
     .home h1 {
         font-size: 2.3rem;
     }
 
-    .home .home-desc {
-        padding-inline: 5rem;
-    }
-
-    footer {
-        padding-inline: 2rem;
+    .home .home-button,
+    .question button {
+        padding-inline: 7rem;
+        padding-block: 1.7rem;
+        font-size: 1rem;
     }
 }
 
-@media screen and (max-width: 650.98px) {
-    .home {
+@media (max-width: 650.98px) {
+    .home,
+    .info,
+    .desktop-1,
+    .desktop-2,
+    .conversation,
+    footer {
         padding-inline: 2rem;
     }
 
     .home .home-desc {
         padding-inline: 2rem;
+        font-size: 1.1rem;
+    }
+
+    .desktop-1 .desktop-1-wrapper-detail p,
+    .desktop-2 .desktop-2-wrapper-detail p,
+    .conversation .conversation-detail p {
+        font-size: 1.1rem;
     }
 
     .desktop-1 .illustration-1 img,
@@ -417,25 +461,11 @@ footer .attribution {
     .desktop-1,
     .desktop-2,
     .conversation {
-        padding-inline: 2rem;
-    }
-
-    .desktop-1,
-    .desktop-2,
-    .conversation {
         text-align: center;
-    }
-
-    .info {
-        padding-inline: 2rem;
-    }
-
-    footer .footer-wrapper .footer-newsletter form .input-wrapper input {
-        min-width: 200%;
     }
 }
 
-@media screen and (max-width: 576.98px) {
+@media (max-width: 576.98px) {
     header {
         padding: 3rem 2rem;
     }
@@ -456,23 +486,19 @@ footer .attribution {
         width: 370px;
     }
 
-    .home h1 {
+    .home h1,
+    .desktop-1 .desktop-1-wrapper-detail h3,
+    .conversation .conversation-detail h3,
+    .desktop-2 .desktop-2-wrapper-detail h3,
+    .question h4 {
         font-size: 1.8rem;
     }
 
-    .home .home-desc {
-        padding-inline: 1rem;
-    }
-
-    .home .home-button {
+    .home .home-button,
+    .question button {
         padding-inline: 5rem;
         padding-block: 1.3rem;
         font-size: 0.8rem;
-    }
-
-    .info .members h2,
-    .info .message h2 {
-        font-size: 4.7rem;
     }
 
     .info .members p,
@@ -480,15 +506,13 @@ footer .attribution {
         font-size: 1.2rem;
     }
 
-    .question {
-        font-size: 2rem;
-        padding-inline: 2rem;
+    footer .footer-wrapper .footer-newsletter form {
+        flex-direction: column;
+        gap: 0;
     }
 
-    .question button {
-        padding-inline: 6rem;
-        padding-block: 1rem;
-        font-size: 0.8rem;
+    footer .footer-wrapper .footer-newsletter form button {
+        margin-top: -1.2rem;
     }
 
     footer .footer-wrapper .footer-info .contact {
@@ -508,16 +532,23 @@ footer .attribution {
         font-size: 2.1rem;
     }
 
-    footer .footer-wrapper .footer-newsletter form .input-wrapper input {
-        min-width: 160%;
-    }
-
     footer .attribution {
         font-size: 0.7rem;
     }
 }
 
-@media screen and (max-width: 395.98px) {
+@media (max-width: 420.98px) {
+    header .logo img {
+        width: 9rem;
+    }
+
+    header button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 395.98px) {
     header .logo img {
         width: 7rem;
     }
@@ -536,7 +567,9 @@ footer .attribution {
 
     .desktop-1 .desktop-1-wrapper-detail h3,
     .conversation .conversation-detail h3,
-    .desktop-2 .desktop-2-wrapper-detail h3 {
+    .desktop-2 .desktop-2-wrapper-detail h3,
+    .home h1,
+    .question h4 {
         font-size: 1.5rem;
     }
 
@@ -549,38 +582,121 @@ footer .attribution {
         font-size: 0.81rem;
     }
 
-    .home h1 {
-        font-size: 1.5rem;
-    }
-
     .home .home-desc {
         padding-inline: 0;
         font-size: 0.85rem;
     }
 
-    .home .home-button {
+    footer .footer-wrapper .footer-info p {
+        font-size: 0.9rem;
+    }
+
+    footer .footer-wrapper .footer-info .contact ul li {
+        padding-bottom: 1rem;
+    }
+
+    footer .footer-wrapper .footer-info .contact ul li img {
+        width: 1.9rem;
+        padding-right: 0.8rem;
+    }
+
+    footer .footer-wrapper .footer-info .icon ul {
+        font-size: 1.7rem;
+    }
+
+    footer .footer-wrapper .footer-newsletter h5 {
+        font-size: 1.3rem;
+    }
+
+    footer .footer-wrapper .footer-newsletter p {
+        font-size: 0.9rem;
+    }
+
+    footer .footer-wrapper .footer-newsletter form {
+        position: relative;
+    }
+
+    footer .footer-wrapper .footer-newsletter form .input-wrapper input {
+        padding: 1.2rem 0.7rem;
+    }
+
+    footer .footer-wrapper .footer-newsletter form button {
+        font-size: 0.8rem;
+        padding: 0.7rem 2rem;
+        position: absolute;
+        bottom: -1rem;
+        right: 0;
+    }
+}
+
+@media (max-width: 320.98px) {
+    header .logo img {
+        width: 8rem;
+    }
+
+    header button {
+        padding: 0.6rem 1.3rem;
+        font-size: 0.5rem;
+    }
+
+    .home .home-button,
+    .question button {
+        padding-inline: 3rem;
+        padding-block: 1rem;
         font-size: 0.7rem;
+    }
+
+    .home {
+        padding-top: 2rem;
+    }
+
+    .home .home-desc {
+        font-size: 0.8rem;
+    }
+
+    .home h1,
+    .desktop-1 .desktop-1-wrapper-detail h3,
+    .conversation .conversation-detail h3,
+    .desktop-2 .desktop-2-wrapper-detail h3,
+    .question h4 {
+        font-size: 1.3rem;
+    }
+
+    .desktop-1 .illustration-1 img,
+    .conversation .conversation-img img,
+    .desktop-2 .illustration-2 img,
+    .home .screen-mockups img {
+        width: 250px;
+    }
+
+    .desktop-1 .desktop-1-wrapper-detail p,
+    .desktop-2 .desktop-2-wrapper-detail p {
+        font-size: 0.8rem;
     }
 
     .info .members h2,
     .info .message h2 {
         font-size: 4rem;
+        text-align: center;
     }
 
-    .info .members p,
-    .info .message p {
-        font-size: 1.1rem;
+    .conversation .conversation-detail p {
+        font-size: 0.8rem;
     }
 
-    .question {
-        font-size: 1.6rem;
+    footer .footer-wrapper .footer-info p {
+        font-size: 0.8rem;
     }
 
-    .question button {
-        padding-inline: 5rem;
+    footer .footer-wrapper .footer-newsletter h5 {
+        font-size: 1.2rem;
     }
 
-    footer .footer-wrapper .footer-newsletter form button {
-        margin-left: 10.5rem;
+    footer .footer-wrapper .footer-newsletter p {
+        font-size: 0.9rem;
+    }
+
+    footer .footer-wrapper .footer-newsletter form .input-wrapper input {
+        padding: 1.1rem 0.7rem;
     }
 }
